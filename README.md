@@ -212,7 +212,7 @@ npm run dev
 
 - GitHub: https://github.com/AtharvaSecurity
 - Age: 17
-- Full Stack Developer
+- Devloper+Web app secuirty tester
 - Fedora Linux User
 
 ---
