@@ -1,0 +1,30 @@
+{
+  "name": "vidyaerp",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "cd apps/server && npm run dev",
+    "dev:web": "cd apps/web && npm run dev",
+    "build": "turbo build",
+    "db:migrate": "cd apps/server && npx prisma migrate dev",
+    "db:seed": "cd apps/server && npx tsx src/prisma/seed.ts",
+    "db:generate": "cd apps/server && npx prisma generate"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "date-fns": "^4.4.0",
+    "lucide-react": "^1.17.0",
+    "recharts": "^3.8.1"
+  }
+}

@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { libraryController } from './library.controller';
+import { authenticate } from '../../common/middleware/auth.middleware';
+const router = Router();
+router.use(authenticate());
+router.post('/books', (rq, rs, nx) => libraryController.addBook(rq, rs, nx));
+router.get('/books', (rq, rs, nx) => libraryController.listBooks(rq, rs, nx));
+router.post('/issue', (rq, rs, nx) => libraryController.issueBook(rq, rs, nx));
+router.patch('/return/:issueId', (rq, rs, nx) => libraryController.returnBook(rq, rs, nx));
+router.get('/issues', (rq, rs, nx) => libraryController.getIssues(rq, rs, nx));
+export default router;

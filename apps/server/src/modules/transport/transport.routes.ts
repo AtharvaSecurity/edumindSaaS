@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { transportController } from './transport.controller';
+import { authenticate } from '../../common/middleware/auth.middleware';
+const router = Router();
+router.use(authenticate());
+router.post('/routes', (rq, rs, nx) => transportController.addRoute(rq, rs, nx));
+router.get('/routes', (rq, rs, nx) => transportController.listRoutes(rq, rs, nx));
+router.post('/assign', (rq, rs, nx) => transportController.assignStudent(rq, rs, nx));
+router.post('/stops', (rq, rs, nx) => transportController.addStop(rq, rs, nx));
+export default router;
